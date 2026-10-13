@@ -1,4 +1,6 @@
 "use client";
+import { ui } from "@/lib/ui-styles";
+import { cn } from "@/lib/utils";
 import { useClock } from "@/hooks/use-clock";
 import { AlarmClock } from "lucide-react";
 import { getRemaining } from "@/lib/sale";
@@ -6,7 +8,7 @@ export function Countdown({ closesAt }: { closesAt: string }) {
   const now = useClock();
   const time = getRemaining(closesAt, now || Date.parse(closesAt));
   return (
-    <div className="countdown panel">
+    <div className={cn(ui["panel"], ui["countdown"])}>
       <div>
         <p>
           <AlarmClock size={20} />{" "}
@@ -15,7 +17,7 @@ export function Countdown({ closesAt }: { closesAt: string }) {
         <span>Lorem ipsum dolor sit amet consectetur</span>
       </div>
       <div
-        className="clock"
+        className={ui["clock"]}
         role="timer"
         aria-label={
           now

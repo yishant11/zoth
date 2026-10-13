@@ -1,4 +1,6 @@
 "use client";
+import { ui } from "@/lib/ui-styles";
+import { cn } from "@/lib/utils";
 import { TopBanner } from "@/components/sections/top-banner";
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
@@ -14,21 +16,21 @@ import { useSale } from "@/hooks/use-sale";
 export default function Page() {
   const query = useSale();
   return (
-    <div className="page-shell">
-      <div className="world-grid" aria-hidden="true">
-        <div className="grid-ceiling" />
-        <div className="grid-wall left" />
-        <div className="grid-wall right" />
-        <div className="grid-back" />
-      </div>
-      <a className="skip-link" href="#main">
+    <div className={ui["page-shell"]}>
+      <a className={ui["skip-link"]} href="#main">
         Skip to content
       </a>
-      <div className="top-section" id="home">
+      <div className={ui["top-section"]} id="home">
+        <div className={ui["hero-grid"]} aria-hidden="true">
+          <div className={ui["grid-ceiling"]} />
+          <div className={cn(ui["grid-wall"], "left")} />
+          <div className={cn(ui["grid-wall"], "right")} />
+          <div className={ui["grid-back"]} />
+        </div>
         <TopBanner />
         <Navbar />
-        <main id="main" tabIndex={-1} className="hero-layout container">
-          <div className="hero-left">
+        <main id="main" tabIndex={-1} className={cn(ui["hero-layout"], ui["container"])}>
+          <div className={ui["hero-left"]}>
             <Hero />
             {query.isPending ? (
               <SaleState status="loading" retry={() => query.refetch()} />

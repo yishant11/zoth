@@ -1,13 +1,14 @@
 "use client";
+import { ui } from "@/lib/ui-styles";
 import { useState } from "react";
 import { ArrowRight, X } from "lucide-react";
 export function TopBanner() {
   const [visible, setVisible] = useState(true);
   return visible ? (
-    <aside className="top-banner" aria-label="Announcement">
+    <aside className={ui["top-banner"]} aria-label="Announcement">
       <button
         aria-label="Dismiss announcement"
-        className="banner-close"
+        className={ui["banner-close"]}
         onClick={() => setVisible(false)}
       >
         <X size={16} />

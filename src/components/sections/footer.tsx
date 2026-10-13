@@ -1,4 +1,6 @@
 "use client";
+import { ui } from "@/lib/ui-styles";
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { toast } from "sonner";
 import Image from "next/image";
@@ -13,11 +15,11 @@ const socials = [
 export function Footer() {
   const [email, setEmail] = useState("");
   return (
-    <footer className="footer container">
-      <div className="footer-main">
-        <div className="footer-about">
+    <footer className={cn(ui["footer"], ui["container"])}>
+      <div className={ui["footer-main"]}>
+        <div className={ui["footer-about"]}>
           <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed</p>
-          <nav aria-label="Social links" className="socials">
+          <nav aria-label="Social links" className={ui["socials"]}>
             {socials.map(({ file, label, href }) => (
               <a
                 key={label}
@@ -36,7 +38,7 @@ export function Footer() {
             ))}
           </nav>
           <form
-            className="subscribe"
+            className={ui["subscribe"]}
             onSubmit={(e) => {
               e.preventDefault();
               if (!email.trim()) return;
@@ -61,19 +63,19 @@ export function Footer() {
             <Button type="submit">DEMO</Button>
           </form>
         </div>
-        <div className="footer-links">
+        <div className={ui["footer-links"]}>
           <h3>DEMO</h3>
           <a href="#sale">Demo</a>
           <a href="#timeline">Demo</a>
         </div>
-        <div className="footer-links">
+        <div className={ui["footer-links"]}>
           <h3>DEMO</h3>
           <a href="#resources">Lorem ipsum</a>
           <a href="#partners">Lorem ipsum</a>
           <a href="#home">Lorem ipsum</a>
         </div>
       </div>
-      <div className="footer-legal">
+      <div className={ui["footer-legal"]}>
         <p>
           Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor
@@ -82,7 +84,7 @@ export function Footer() {
         </p>
         <span>[XX]</span>
       </div>
-      <div className="wordmark" aria-label="Demo">
+      <div className={ui["wordmark"]} aria-label="Demo">
         <span>D</span>EMO
       </div>
     </footer>

@@ -1,3 +1,5 @@
+import { ui } from "@/lib/ui-styles";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 const partners = [
@@ -16,15 +18,15 @@ const partners = [
 ];
 export function PartnersStrip() {
   return (
-    <section className="partners-strip" id="partners" aria-label="Partners">
-      <div className="container partners-inner">
-        <p className="partner-label">
+    <section className={ui["partners-strip"]} id="partners" aria-label="Partners">
+      <div className={cn(ui["container"], ui["partners-inner"])}>
+        <p className={ui["partner-label"]}>
           DEMO
           <br />
           DEMO
         </p>
-        <div className="partners-viewport">
-          <div className="partners-track">
+        <div className={ui["partners-viewport"]}>
+          <div className={ui["partners-track"]}>
             {[0, 1].map((copy) => (
               <ul key={copy} aria-hidden={copy === 1 ? true : undefined}>
                 {partners.map((p) => (

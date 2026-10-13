@@ -1,4 +1,6 @@
 "use client";
+import { ui } from "@/lib/ui-styles";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { ConnectDialog } from "@/components/connect-dialog";
@@ -19,19 +21,19 @@ const links = [
 ];
 export function Navbar() {
   return (
-    <header className="navbar container">
-      <a href="#home" aria-label="Demo home" className="brand">
+    <header className={cn(ui["navbar"], ui["container"])}>
+      <a href="#home" aria-label="Demo home" className={ui["brand"]}>
         <Image src="/assets/demo-mark.png" width={30} height={30} alt="" />
         <span>Demo</span>
       </a>
-      <nav className="desktop-nav corner-frame" aria-label="Main navigation">
+      <nav className={cn(ui["corner-frame"], ui["desktop-nav"])} aria-label="Main navigation">
         {links.map(([label, href]) => (
           <a href={href} key={href}>
             {label}
           </a>
         ))}
       </nav>
-      <div className="nav-actions">
+      <div className={ui["nav-actions"]}>
         <ConnectDialog kind="sonar" variant="outline" />
         <ConnectDialog kind="wallet" />
       </div>
@@ -40,7 +42,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="mobile-menu"
+            className={ui["mobile-menu"]}
             aria-label="Open navigation"
           >
             <Menu />

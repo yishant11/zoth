@@ -1,3 +1,4 @@
+import { ui } from "@/lib/ui-styles";
 import type { Metadata } from "next";
 import { Providers } from "@/components/providers";
 import "./globals.css";
@@ -12,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={ui.root}>
+      <body className={ui.body}>
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -1,4 +1,6 @@
 "use client";
+import { ui } from "@/lib/ui-styles";
+import { cn } from "@/lib/utils";
 import { FileText, BookOpen, ShieldCheck } from "lucide-react";
 import {
   Dialog,
@@ -29,7 +31,7 @@ const documents = [
 ];
 export function Resources() {
   return (
-    <aside className="resources panel" id="resources">
+    <aside className={cn(ui["panel"], ui["resources"])} id="resources">
       <h3>Read before you commit</h3>
       <ul>
         {documents.map(({ label, description }) => (
@@ -37,7 +39,7 @@ export function Resources() {
             <span>Lorem ipsum</span>
             <Dialog>
               <DialogTrigger asChild>
-                <button className="document-link">{label}</button>
+                <button className={ui["document-link"]}>{label}</button>
               </DialogTrigger>
               <DialogContent>
                 <DialogTitle className="text-xl">{label}</DialogTitle>

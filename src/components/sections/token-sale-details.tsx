@@ -1,3 +1,5 @@
+import { ui } from "@/lib/ui-styles";
+import { cn } from "@/lib/utils";
 import { Blocks, Coins, Copy, Target, CalendarClock } from "lucide-react";
 import type { Sale } from "@/lib/sale";
 import { Resources } from "@/components/sections/resources";
@@ -5,11 +7,11 @@ const icons = [Blocks, Coins, Copy, Target, Target, CalendarClock];
 export function TokenSaleDetails({ sale }: { sale?: Sale | null }) {
   return (
     <section
-      className="details-section container"
+      className={cn(ui["details-section"], ui["container"])}
       id="timeline"
       aria-labelledby="details-title"
     >
-      <div className="details-left">
+      <div className={ui["details-left"]}>
         <div>
           <h2 id="details-title">Lorem ipsum</h2>
           <p>
@@ -19,14 +21,14 @@ export function TokenSaleDetails({ sale }: { sale?: Sale | null }) {
         </div>
         <Resources />
       </div>
-      <div className="details-right">
+      <div className={ui["details-right"]}>
         {sale ? (
           <>
-            <ol className="timeline" aria-label="Token sale timeline">
+            <ol className={ui["timeline"]} aria-label="Token sale timeline">
               {sale.timeline.map((step, index) => (
                 <li key={step.id} className={index === 0 ? "active" : ""}>
-                  <span className="timeline-dot" />
-                  <span className="timeline-kicker">
+                  <span className={ui["timeline-dot"]} />
+                  <span className={ui["timeline-kicker"]}>
                     {index === 0 ? step.label : "\u00a0"}
                   </span>
                   <strong>{index === 0 ? step.description : step.label}</strong>
@@ -40,7 +42,7 @@ export function TokenSaleDetails({ sale }: { sale?: Sale | null }) {
                 </li>
               ))}
             </ol>
-            <table className="details-table">
+            <table className={ui["details-table"]}>
               <caption className="sr-only">Token sale details</caption>
               <tbody>
                 {sale.details.map((row, index) => {
@@ -59,7 +61,7 @@ export function TokenSaleDetails({ sale }: { sale?: Sale | null }) {
             </table>
           </>
         ) : (
-          <div className="details-placeholder" role="status">
+          <div className={ui["details-placeholder"]} role="status">
             Sale details will appear here when sale data is available.
           </div>
         )}
