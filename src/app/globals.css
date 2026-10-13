@@ -63,11 +63,15 @@ ol {
   max-width: 1386px;
   margin-inline: auto;
 }
+.page-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
 .top-section {
   position: relative;
   min-height: calc(989 * var(--u));
   isolation: isolate;
-  background: radial-gradient(ellipse at 72% 49%, #2c0e0366 0, transparent 46%);
 }
 .top-banner {
   height: calc(43 * var(--u));
@@ -342,10 +346,25 @@ ol {
   color: #aaa;
 }
 .connection-card {
+  position: relative;
   padding: calc(22 * var(--u));
   margin-top: calc(8 * var(--u));
   min-height: calc(325 * var(--u));
   background: #0c0302;
+}
+.connection-card::before {
+  content: "";
+  position: absolute;
+  inset: calc(-90 * var(--u)) calc(-100 * var(--u)) calc(-330 * var(--u));
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    #a32f083b 0%,
+    #6b1d0329 32%,
+    #35100314 52%,
+    transparent 74%
+  );
 }
 .connection-card h2 {
   font-size: calc(16 * var(--u));
@@ -714,46 +733,48 @@ ol {
   top: 12px;
 }
 .world-grid {
-  position: absolute;
-  inset: calc(43 * var(--u)) 0 0;
+  /* One static viewport-sized backdrop remains visible throughout the page. */
+  position: fixed;
+  inset: 0;
   overflow: hidden;
   z-index: -1;
-  perspective: 800px;
-  opacity: 0.6;
-  mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+  pointer-events: none;
+  perspective: 900px;
+  perspective-origin: 50% 38%;
+  opacity: 0.72;
 }
 .grid-back {
   position: absolute;
-  inset: 12% 9%;
+  inset: 18% 15% 0;
   background-image:
-    linear-gradient(#48241c40 1px, transparent 1px),
-    linear-gradient(90deg, #48241c40 1px, transparent 1px);
-  background-size: calc(108 * var(--u)) calc(104 * var(--u));
-  mask-image: radial-gradient(ellipse at 50% 50%, transparent 43%, #000 95%);
+    linear-gradient(#67342645 1px, transparent 1px),
+    linear-gradient(90deg, #67342645 1px, transparent 1px);
+  background-size: clamp(64px, 6.36vw, 108px) clamp(80px, 6.13vw, 104px);
+  mask-image: radial-gradient(ellipse at 50% 38%, transparent 28%, #000 92%);
 }
 .grid-ceiling {
   position: absolute;
   top: 0;
   left: -10%;
   width: 120%;
-  height: 45%;
+  height: 55%;
   transform-origin: top center;
   transform: rotateX(-65deg);
   background-image:
     linear-gradient(#75392a70 1px, transparent 1px),
     linear-gradient(90deg, #75392a70 1px, transparent 1px);
-  background-size: calc(108 * var(--u)) calc(80 * var(--u));
+  background-size: clamp(64px, 6.36vw, 108px) clamp(60px, 4.71vw, 80px);
   mask-image: linear-gradient(#000, transparent);
 }
 .grid-wall {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 30%;
+  width: 38%;
   background-image:
     linear-gradient(#783c2670 1px, transparent 1px),
     linear-gradient(90deg, #783c2670 1px, transparent 1px);
-  background-size: calc(80 * var(--u)) calc(120 * var(--u));
+  background-size: clamp(48px, 4.71vw, 80px) clamp(80px, 7.07vw, 120px);
 }
 .grid-wall.left {
   left: 0;
@@ -937,7 +958,7 @@ ol {
     margin-top: 160px;
   }
   .world-grid {
-    opacity: 0.3;
+    opacity: 0.5;
   }
 }
 @media (max-width: 639px) {
@@ -1143,7 +1164,7 @@ ol {
     left: 8px;
   }
   .grid-back {
-    inset: 4% 3%;
+    inset: 15% 8% 0;
     background-size: 60px 80px;
   }
 }

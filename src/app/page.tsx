@@ -14,17 +14,17 @@ import { useSale } from "@/hooks/use-sale";
 export default function Page() {
   const query = useSale();
   return (
-    <>
+    <div className="page-shell">
+      <div className="world-grid" aria-hidden="true">
+        <div className="grid-ceiling" />
+        <div className="grid-wall left" />
+        <div className="grid-wall right" />
+        <div className="grid-back" />
+      </div>
       <a className="skip-link" href="#main">
         Skip to content
       </a>
       <div className="top-section" id="home">
-        <div className="world-grid" aria-hidden="true">
-          <div className="grid-ceiling" />
-          <div className="grid-wall left" />
-          <div className="grid-wall right" />
-          <div className="grid-back" />
-        </div>
         <TopBanner />
         <Navbar />
         <main id="main" tabIndex={-1} className="hero-layout container">
@@ -60,6 +60,6 @@ export default function Page() {
       <PartnersStrip />
       <TokenSaleDetails sale={query.data} />
       <Footer />
-    </>
+    </div>
   );
 }
