@@ -57,7 +57,7 @@ export function Footer() {
               type="email"
               required
               autoComplete="email"
-              placeholder="[XX]"
+              placeholder="[EMAIL_ADDRESS]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -83,7 +83,7 @@ export function Footer() {
           sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt
           ut labore et dolore magna
         </p>
-        <span>[XX]</span>
+        <span>[01]</span>
       </div>
       <div className={ui["wordmark"]} role="img" aria-label="Demo">
         {"DEMO".split("").map((letter) => (
