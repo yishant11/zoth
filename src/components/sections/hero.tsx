@@ -1,9 +1,14 @@
 import { ui } from "@/lib/ui-styles";
 import { cn } from "@/lib/utils";
+import styles from "./section-details.module.css";
 export function Hero() {
   return (
     <div className={ui["hero-copy"]}>
-      <span className={cn(ui["corner-frame"], "eyebrow")}>Lorem ipsum</span>
+      <span
+        className={cn(ui["corner-frame"], "eyebrow", styles.frame, styles.eyebrow)}
+      >
+        Lorem ipsum
+      </span>
       <h1>Lorem ipsum dolor</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod

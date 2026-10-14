@@ -1,5 +1,5 @@
 // Tailwind class groups shared by the page sections.
-// Semantic markers only anchor scoped utilities and browser checks; they have no CSS rules.
+// Semantic markers anchor scoped utilities and browser checks.
 export const ui = {
   "root":
     "[--primary:#ff4509] [--border:#35120d] [--muted:#929292] [--u:min(1px,_0.0588928vw)] [color-scheme:dark] scroll-smooth max-lg:[--u:1px] motion-reduce:scroll-auto",
@@ -10,7 +10,7 @@ export const ui = {
   "page-shell":
     "page-shell relative isolate overflow-clip",
   "top-section":
-    "top-section relative min-h-[calc(989_*_var(--u))] isolate min-[1699px]:min-h-[989px] max-lg:min-h-0 max-lg:pb-[70px]",
+    "top-section relative overflow-clip min-h-[calc(989_*_var(--u))] isolate min-[1699px]:min-h-[989px] max-lg:min-h-0 max-lg:pb-[70px]",
   "top-banner":
     "top-banner h-[calc(43_*_var(--u))] bg-primary flex items-center justify-center gap-[calc(22_*_var(--u))] relative text-[length:calc(14_*_var(--u))] [&_a]:flex [&_a]:items-center [&_a]:gap-[calc(28_*_var(--u))] [&_a:hover]:text-white [&_a:hover]:underline max-lg:h-[36px] max-lg:text-[length:12px]",
   "banner-close":
@@ -22,11 +22,11 @@ export const ui = {
   "desktop-nav":
     "desktop-nav w-[calc(474_*_var(--u))] h-[calc(46_*_var(--u))] flex justify-around items-center bg-[#23130d] shrink-0 text-[length:calc(14_*_var(--u))] text-[#aaa] border-0 max-lg:hidden",
   "nav-actions":
-    "nav-actions flex gap-[calc(16_*_var(--u))] [&_button]:h-[calc(44_*_var(--u))] [&_button]:text-[length:calc(16_*_var(--u))] [&_button]:px-[calc(29_*_var(--u))] max-lg:hidden",
+    "nav-actions flex gap-[calc(16_*_var(--u))] [&_button]:h-[calc(44_*_var(--u))] [&_button]:text-[length:calc(16_*_var(--u))] [&_button]:w-[calc(164_*_var(--u))] [&_button:first-child]:w-[calc(180_*_var(--u))] [&_button]:px-0 max-lg:hidden",
   "mobile-menu":
     "mobile-menu hidden max-lg:inline-flex",
   "corner-frame":
-    "corner-frame relative border border-[#712409] before:content-[''] before:absolute before:pointer-events-none before:w-[calc(7_*_var(--u))] before:top-[-5px] before:bottom-[-5px] before:border-t before:border-[#b74013] before:border-b before:border-[#b74013] before:left-[-5px] before:border-l before:border-[#b74013] after:content-[''] after:absolute after:pointer-events-none after:w-[calc(7_*_var(--u))] after:top-[-5px] after:bottom-[-5px] after:border-t after:border-[#b74013] after:border-b after:border-[#b74013] after:right-[-5px] after:border-r after:border-[#b74013]",
+    "corner-frame relative border border-[#712409]",
   "hero-layout":
     "hero-layout grid grid-cols-[674fr_680fr] gap-[calc(32_*_var(--u))] pt-[calc(19_*_var(--u))] items-start max-lg:grid-cols-[1fr_1fr] max-lg:gap-[24px] max-lg:pt-[20px] max-sm:grid-cols-[1fr] max-sm:gap-[30px] max-sm:pt-[12px]",
   "hero-left":
@@ -56,13 +56,13 @@ export const ui = {
   "clock":
     "clock flex gap-[calc(14_*_var(--u))] [&_>_div]:bg-[#1c0b09] [&_>_div]:min-w-[calc(47_*_var(--u))] [&_>_div]:p-[calc(8_*_var(--u))_calc(4_*_var(--u))] [&_>_div]:relative [&_>_div]:flex [&_>_div]:items-center [&_>_div]:flex-col [&_>_div]:gap-[1px] [&_>_div:not(:last-child):after]:content-[':'] [&_>_div:not(:last-child):after]:absolute [&_>_div:not(:last-child):after]:right-[calc(-9_*_var(--u))] [&_>_div:not(:last-child):after]:top-[27%] [&_>_div:not(:last-child):after]:text-white [&_strong]:text-[length:calc(18_*_var(--u))] [&_strong]:font-normal [&_strong]:tabular-nums [&_small]:text-[length:calc(9_*_var(--u))] [&_small]:uppercase [&_small]:text-[#aaa] max-lg:w-full max-lg:justify-between max-lg:gap-[12px] max-lg:[&_>_div]:flex-1 max-sm:mt-[4px] max-sm:[&_>_div]:min-h-[44px] max-sm:[&_strong]:text-[length:18px]",
   "connection-card":
-    "connection-card relative p-[calc(22_*_var(--u))] mt-[calc(8_*_var(--u))] min-h-[calc(325_*_var(--u))] bg-[#0c0302] before:content-[''] before:absolute before:[inset:calc(-90_*_var(--u))_calc(-100_*_var(--u))_calc(-330_*_var(--u))] before:-z-1 before:pointer-events-none before:[background:radial-gradient(_ellipse_at_50%_48%,_#a32f083b_0%,_#6b1d0329_32%,_#35100314_52%,_transparent_74%_)] [&_h2]:text-[length:calc(16_*_var(--u))] [&_h2]:font-normal [&_h2]:mb-[calc(10_*_var(--u))] [&_p]:text-[length:calc(18_*_var(--u))] [&_p]:text-[#ccc] [&_small]:block [&_small]:text-center [&_small]:text-[length:calc(14_*_var(--u))] [&_small]:text-[#aaa] [&_small]:mt-[calc(24_*_var(--u))] max-lg:p-[20px] max-lg:min-h-0 max-lg:[&_p]:text-[length:16px] max-lg:[&_small]:text-[length:12px] max-sm:mt-0 max-sm:p-[22px] max-sm:[&_small]:leading-[1.6]",
+    "connection-card relative p-[calc(22_*_var(--u))] mt-[calc(8_*_var(--u))] min-h-[calc(325_*_var(--u))] border-[#61230c] bg-[#0c0302] before:content-[''] before:absolute before:[inset:calc(-130_*_var(--u))_calc(-140_*_var(--u))_calc(-360_*_var(--u))] before:-z-1 before:pointer-events-none before:[background:radial-gradient(_ellipse_at_44%_56%,_#b638074d_0%,_#8c280538_30%,_#43170324_55%,_transparent_78%_)] [&_h2]:text-[length:calc(16_*_var(--u))] [&_h2]:font-normal [&_h2]:mb-[calc(10_*_var(--u))] [&_p]:text-[length:calc(18_*_var(--u))] [&_p]:text-[#ccc] [&_small]:block [&_small]:text-center [&_small]:text-[length:calc(14_*_var(--u))] [&_small]:text-[#aaa] [&_small]:mt-[calc(21_*_var(--u))] max-lg:p-[20px] max-lg:min-h-0 max-lg:[&_p]:text-[length:16px] max-lg:[&_small]:text-[length:12px] max-sm:mt-0 max-sm:p-[22px] max-sm:[&_small]:leading-[1.6]",
   "connect-action":
-    "connect-action m-[calc(42_*_var(--u))_calc(6_*_var(--u))_0] border-0 [&_+_.connect-action]:mt-[calc(32_*_var(--u))] [&_button]:h-[calc(61_*_var(--u))] [&_button]:text-[length:calc(17_*_var(--u))] [&_button]:rounded-none max-lg:[&_button]:h-[48px] max-lg:[&_button]:text-[length:14px] max-sm:mt-[30px] max-sm:[&_+_.connect-action]:mt-[24px]",
+    "connect-action flex m-[calc(38_*_var(--u))_calc(6_*_var(--u))_0] border-0 [&_+_.connect-action]:mt-[calc(31_*_var(--u))] [&_button]:h-[calc(60_*_var(--u))] [&_button]:text-[length:calc(17_*_var(--u))] [&_button]:rounded-none max-lg:[&_button]:h-[48px] max-lg:[&_button]:text-[length:14px] max-sm:mt-[30px] max-sm:[&_+_.connect-action]:mt-[24px]",
   "partners-strip":
     "partners-strip bg-[#0b0302] [border-block:1px_solid_#4b1712]",
   "partners-inner":
-    "partners-inner flex h-[calc(86_*_var(--u))] border-x border-[#60302c] relative before:content-['+'] before:absolute before:top-[-10px] before:text-[#8e4240] before:text-[length:20px] before:left-[-8px] after:content-['+'] after:absolute after:top-[-10px] after:text-[#8e4240] after:text-[length:20px] after:right-[-8px] [&_li]:flex [&_li]:items-center [&_li]:min-w-0 [&_img]:block [&_img]:max-w-[none] [&_img]:h-auto [&_img]:w-[calc(var(--logo-width)_*_var(--u))] [&_img]:max-h-[calc(53_*_var(--u))] max-lg:h-auto max-lg:min-h-[86px] max-lg:[&_ul]:flex-nowrap max-lg:[&_ul]:justify-between max-lg:[&_ul]:gap-[16px] max-lg:[&_ul]:p-[20px] max-lg:[&_img]:max-h-[53px] max-sm:flex-col max-sm:border-0 max-sm:[&_ul]:gap-[20px] max-sm:[&_ul]:p-[24px_20px] max-sm:[&_li]:shrink-0 max-sm:[&_li]:justify-center max-sm:[&_img]:max-h-[53px]",
+    "partners-inner flex h-[calc(86_*_var(--u))] border-x border-[#60302c] relative [&_li]:flex [&_li]:items-center [&_li]:min-w-0 [&_img]:block [&_img]:max-w-[none] [&_img]:h-auto [&_img]:w-[calc(var(--logo-width)_*_var(--u))] [&_img]:max-h-[calc(53_*_var(--u))] max-lg:h-auto max-lg:min-h-[86px] max-lg:[&_ul]:flex-nowrap max-lg:[&_ul]:justify-between max-lg:[&_ul]:gap-[16px] max-lg:[&_ul]:p-[20px] max-lg:[&_img]:max-h-[53px] max-sm:flex-col max-sm:border-0 max-sm:[&_ul]:gap-[20px] max-sm:[&_ul]:p-[24px_20px] max-sm:[&_li]:shrink-0 max-sm:[&_li]:justify-center max-sm:[&_img]:max-h-[53px]",
   "partner-label":
     "partner-label flex flex-col justify-center min-w-[calc(225_*_var(--u))] pl-[calc(35_*_var(--u))] border-r border-[#60302c] text-[length:calc(16_*_var(--u))] leading-[1.1] max-lg:min-w-[110px] max-lg:pl-[15px] max-lg:text-[length:12px] max-sm:[border-right:0] max-sm:border-b max-sm:border-[#35170f] max-sm:items-center max-sm:p-[14px] max-sm:min-w-0 max-sm:gap-[4px] max-sm:[&_br]:hidden",
   "partners-viewport":
@@ -86,7 +86,7 @@ export const ui = {
   "timeline-kicker":
     "timeline-kicker text-[length:calc(12_*_var(--u))] text-primary",
   "details-table":
-    "details-table border-collapse w-full text-[length:calc(16_*_var(--u))] leading-[1.4] [&_tr]:border-b [&_tr]:border-[#292521] [&_tr:last-child]:[border-bottom:0] [&_th]:py-[calc(9_*_var(--u))] [&_th]:font-normal [&_th]:text-left [&_td]:py-[calc(9_*_var(--u))] [&_td]:font-normal [&_td]:text-right [&_td]:text-[#bdbdbd] [&_th_svg]:inline-block [&_th_svg]:align-middle [&_th_svg]:mr-[calc(12_*_var(--u))] [&_th_svg]:text-[#ccc] [&_tr:last-child_td]:underline max-lg:text-[length:13px] max-sm:text-[length:14px] max-sm:[&_td]:max-w-[160px] max-sm:[&_td]:[overflow-wrap:anywhere]",
+    "details-table border-collapse w-full text-[length:calc(16_*_var(--u))] leading-[1.4] [&_tr]:border-b [&_tr]:border-[#292521] [&_tr:last-child]:[border-bottom:0] [&_th]:py-[calc(9_*_var(--u))] [&_th]:font-normal [&_th]:text-left [&_td]:py-[calc(9_*_var(--u))] [&_td]:font-normal [&_td]:text-right [&_td]:text-[#e0e0e0] [&_th_svg]:text-[#e0e0e0] [&_tr:last-child_td_span]:underline [&_tr:last-child_td_span]:underline-offset-[3px] max-lg:text-[length:13px] max-sm:text-[length:14px] max-sm:[&_td]:max-w-[160px] max-sm:[&_td]:[overflow-wrap:anywhere]",
   "footer":
     "footer pt-[calc(40_*_var(--u))] px-[calc(32_*_var(--u))] max-lg:px-0",
   "footer-main":
@@ -102,7 +102,7 @@ export const ui = {
   "footer-legal":
     "footer-legal flex justify-between gap-[30px] mt-[calc(80_*_var(--u))] items-end text-[length:calc(12_*_var(--u))] text-[#888] leading-[1.65] [&_p]:w-[calc(603_*_var(--u))] [&_p]:max-w-[80%] max-lg:text-[length:11px] max-sm:mt-[50px] max-sm:[&_p]:max-w-[85%] max-sm:[&_p]:w-auto",
   "wordmark":
-    "wordmark text-[length:calc(475.58_*_var(--u))] font-semibold leading-[0.85] tracking-[-0.065em] flex justify-center text-[#1d0900] mt-[calc(215_*_var(--u))] select-none [&_span]:text-primary min-[1699px]:mt-[215px] max-lg:text-[length:28vw] max-lg:mt-[160px] max-sm:mt-[110px] max-sm:text-[length:28vw] max-sm:leading-[1.3]",
+    "wordmark text-[length:calc(475.58_*_var(--u))] font-semibold leading-[0.85] tracking-[-0.065em] flex justify-center text-[#1d0900] mt-[calc(215_*_var(--u))] pb-[0.08em] select-none min-[1699px]:mt-[215px] max-lg:text-[length:28vw] max-lg:mt-[160px] max-sm:mt-[110px] max-sm:text-[length:28vw] max-sm:leading-[1.3]",
   "sale-state":
     "sale-state mt-[calc(40_*_var(--u))] p-[24px] min-h-[calc(390_*_var(--u))] flex flex-col gap-[22px] [&_h2]:text-[length:20px] [&_p]:text-[#aaa] [&_p]:text-[length:14px] max-sm:min-h-[350px] max-sm:mt-[32px]",
   "details-placeholder":
@@ -111,12 +111,4 @@ export const ui = {
     "skeleton [background:linear-gradient(90deg,_#21100b_25%,_#382019_50%,_#21100b_75%)] [background-size:200%_100%] animate-shimmer motion-reduce:animate-none",
   "skip-link":
     "skip-link fixed left-[16px] top-[-100px] bg-primary text-white p-[12px] z-100 focus:top-[12px]",
-  "hero-grid":
-    "hero-grid absolute inset-0 overflow-hidden -z-1 pointer-events-none [perspective:900px] [perspective-origin:50%_38%] opacity-[0.72] max-lg:opacity-[0.5]",
-  "grid-back":
-    "grid-back absolute [inset:18%_15%_0] [background-image:linear-gradient(#67342645_1px,_transparent_1px),_linear-gradient(90deg,_#67342645_1px,_transparent_1px)] [background-size:clamp(64px,_6.36vw,_108px)_clamp(80px,_6.13vw,_104px)] [mask-image:radial-gradient(ellipse_at_50%_38%,_transparent_28%,_#000_92%)] max-sm:[inset:15%_8%_0] max-sm:[background-size:60px_80px]",
-  "grid-ceiling":
-    "grid-ceiling absolute top-0 left-[-10%] w-[120%] h-[55%] origin-[top_center] [transform:rotateX(-65deg)] [background-image:linear-gradient(#75392a70_1px,_transparent_1px),_linear-gradient(90deg,_#75392a70_1px,_transparent_1px)] [background-size:clamp(64px,_6.36vw,_108px)_clamp(60px,_4.71vw,_80px)] [mask-image:linear-gradient(#000,_transparent)]",
-  "grid-wall":
-    "grid-wall absolute top-0 bottom-0 w-[38%] [background-image:linear-gradient(#783c2670_1px,_transparent_1px),_linear-gradient(90deg,_#783c2670_1px,_transparent_1px)] [background-size:clamp(48px,_4.71vw,_80px)_clamp(80px,_7.07vw,_120px)] [&.left]:left-0 [&.left]:origin-[left] [&.left]:[transform:rotateY(64deg)] [&.left]:[mask-image:linear-gradient(90deg,_#000,_transparent)] [&.right]:right-0 [&.right]:origin-[right] [&.right]:[transform:rotateY(-64deg)] [&.right]:[mask-image:linear-gradient(270deg,_#000,_transparent)]",
 } as const;

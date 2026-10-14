@@ -14,18 +14,24 @@ export function ConnectDialog({
   kind,
   variant = "default",
   className,
+  triggerLabel,
 }: {
   kind: "wallet" | "sonar";
   variant?: "default" | "outline";
   className?: string;
+  triggerLabel?: string;
 }) {
   const label = kind === "wallet" ? "Connect Wallet" : "Connect Sonar";
   const Icon = kind === "wallet" ? Wallet : Radio;
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant={variant} className={className}>
-          {label}
+        <Button
+          variant={variant}
+          className={className}
+          aria-label={triggerLabel ? label : undefined}
+        >
+          {triggerLabel ?? label}
         </Button>
       </DialogTrigger>
       <DialogContent>

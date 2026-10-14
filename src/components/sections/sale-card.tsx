@@ -9,6 +9,7 @@ import { type Sale, getProgress, money } from "@/lib/sale";
 import { Countdown } from "@/components/countdown";
 import { ConnectDialog } from "@/components/connect-dialog";
 import { Button } from "@/components/ui/button";
+import styles from "./section-details.module.css";
 function Progress({
   raised,
   target,
@@ -104,11 +105,34 @@ export function ConnectionCard() {
     >
       <h2>LOREM IPSUM</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipiscing</p>
-      <div className={cn(ui["corner-frame"], ui["connect-action"])}>
-        <ConnectDialog kind="wallet" className="w-full" />
+      <div
+        className={cn(
+          ui["corner-frame"],
+          ui["connect-action"],
+          styles.frame,
+          styles.solidAction,
+        )}
+      >
+        <ConnectDialog
+          kind="wallet"
+          triggerLabel="Lorem ipsum"
+          className="w-full"
+        />
       </div>
-      <div className={cn(ui["corner-frame"], ui["connect-action"])}>
-        <ConnectDialog kind="sonar" variant="outline" className="w-full" />
+      <div
+        className={cn(
+          ui["corner-frame"],
+          ui["connect-action"],
+          styles.frame,
+          styles.outlineAction,
+        )}
+      >
+        <ConnectDialog
+          kind="sonar"
+          triggerLabel="Lorem ipsum"
+          variant="outline"
+          className="w-full"
+        />
       </div>
       <small>
         Lorem ipsum dolor sit amet consectetur adipiscing elit sed do

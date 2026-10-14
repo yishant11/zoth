@@ -1,9 +1,17 @@
 import { ui } from "@/lib/ui-styles";
 import { cn } from "@/lib/utils";
-import { Blocks, Coins, Copy, Target, CalendarClock } from "lucide-react";
+import {
+  Blocks,
+  CircleDollarSign,
+  HandCoins,
+  Files,
+  Target,
+  CalendarClock,
+} from "lucide-react";
 import type { Sale } from "@/lib/sale";
 import { Resources } from "@/components/sections/resources";
-const icons = [Blocks, Coins, Copy, Target, Target, CalendarClock];
+import styles from "./section-details.module.css";
+const icons = [Blocks, HandCoins, Files, Target, null, CalendarClock];
 export function TokenSaleDetails({ sale }: { sale?: Sale | null }) {
   return (
     <section
@@ -48,12 +56,26 @@ export function TokenSaleDetails({ sale }: { sale?: Sale | null }) {
                 {sale.details.map((row, index) => {
                   const Icon = icons[index % icons.length];
                   return (
-                    <tr key={`${row.label}-${index}`}>
+                    <tr
+                      key={`${row.label}-${index}`}
+                      className={index === 3 ? styles.groupStart : undefined}
+                    >
                       <th scope="row">
-                        <Icon size={16} />
-                        {row.label}
+                        <span className={styles.detailLabel}>
+                          <span className={styles.detailIcon} aria-hidden="true">
+                            {Icon && <Icon size={16} />}
+                          </span>
+                          {row.label}
+                        </span>
                       </th>
-                      <td>{row.value}</td>
+                      <td>
+                        <span className={styles.detailValue}>
+                          {index === 1 && (
+                            <CircleDollarSign size={16} aria-hidden="true" />
+                          )}
+                          {row.value}
+                        </span>
+                      </td>
                     </tr>
                   );
                 })}

@@ -13,6 +13,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import styles from "./section-details.module.css";
 const links = [
   ["Demo", "#sale"],
   ["Demo", "#partners"],
@@ -26,7 +27,15 @@ export function Navbar() {
         <Image src="/assets/demo-mark.png" width={30} height={30} alt="" />
         <span>Demo</span>
       </a>
-      <nav className={cn(ui["corner-frame"], ui["desktop-nav"])} aria-label="Main navigation">
+      <nav
+        className={cn(
+          ui["corner-frame"],
+          ui["desktop-nav"],
+          styles.frame,
+          styles.navigation,
+        )}
+        aria-label="Main navigation"
+      >
         {links.map(([label, href]) => (
           <a href={href} key={href}>
             {label}
@@ -34,8 +43,13 @@ export function Navbar() {
         ))}
       </nav>
       <div className={ui["nav-actions"]}>
-        <ConnectDialog kind="sonar" variant="outline" />
-        <ConnectDialog kind="wallet" />
+        <ConnectDialog
+          kind="sonar"
+          variant="outline"
+          triggerLabel="Lorem ipsum"
+          className="bg-[#1b0802]"
+        />
+        <ConnectDialog kind="wallet" triggerLabel="Lorem ipsum" />
       </div>
       <Dialog>
         <DialogTrigger asChild>

@@ -2,6 +2,7 @@ import { ui } from "@/lib/ui-styles";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import styles from "./section-details.module.css";
 const partners = [
   { name: "Borderless", file: "borderless", width: 97, height: 26 },
   { name: "TAISU", file: "taisu", width: 80, height: 14 },
@@ -19,11 +20,10 @@ const partners = [
 export function PartnersStrip() {
   return (
     <section className={ui["partners-strip"]} id="partners" aria-label="Partners">
-      <div className={cn(ui["container"], ui["partners-inner"])}>
-        <p className={ui["partner-label"]}>
-          DEMO
-          <br />
-          DEMO
+      <div className={cn(ui["container"], ui["partners-inner"], styles.partnerStrip)}>
+        <p className={cn(ui["partner-label"], styles.partnerLabel)}>
+          <span>DEMO</span>
+          <span>DEMO</span>
         </p>
         <div className={ui["partners-viewport"]}>
           <div className={ui["partners-track"]}>

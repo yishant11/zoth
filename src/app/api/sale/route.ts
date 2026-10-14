@@ -65,9 +65,9 @@ export async function GET(request: NextRequest) {
       ],
       details: [
         { label: "Demo", value: "DEMO" },
-        { label: "Lorem ipsum", value: "USDC" },
-        { label: "Lorem ipsum", value: "20,000,000 DEMO" },
-        { label: "Demo", value: "$0.05" },
+        { label: "Lorem ipsum", value: "DEMO" },
+        { label: "Lorem ipsum", value: "[XX]" },
+        { label: "Demo", value: "[XX]" },
         { label: "Demo", value: "Lorem ipsum" },
         { label: "Lorem ipsum", value: "Demo" },
       ],

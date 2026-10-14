@@ -1,0 +1,37 @@
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.25;
+  mask-image: radial-gradient(ellipse at 50% 60%, transparent 25%, #0008 62%, #000 95%);
+}
+
+.ceiling {
+  opacity: 0.7;
+}
+
+.walls {
+  opacity: 0.8;
+}
+
+.back {
+  opacity: 0.3;
+}
+
+@media (width < 1024px) {
+  .grid {
+    left: 50%;
+    min-width: 1024px;
+    transform: translateX(-50%);
+    opacity: 0.7;
+  }
+}

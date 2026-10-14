@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { TopBanner } from "@/components/sections/top-banner";
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
+import { HeroBackdrop } from "@/components/sections/hero-backdrop";
 import {
   SaleCard,
   ConnectionCard,
@@ -21,12 +22,7 @@ export default function Page() {
         Skip to content
       </a>
       <div className={ui["top-section"]} id="home">
-        <div className={ui["hero-grid"]} aria-hidden="true">
-          <div className={ui["grid-ceiling"]} />
-          <div className={cn(ui["grid-wall"], "left")} />
-          <div className={cn(ui["grid-wall"], "right")} />
-          <div className={ui["grid-back"]} />
-        </div>
+        <HeroBackdrop />
         <TopBanner />
         <Navbar />
         <main id="main" tabIndex={-1} className={cn(ui["hero-layout"], ui["container"])}>

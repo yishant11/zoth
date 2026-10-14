@@ -5,6 +5,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import styles from "./section-details.module.css";
 const socials = [
   { file: "x", label: "X", href: "https://x.com" },
   { file: "youtube", label: "YouTube", href: "https://youtube.com" },
@@ -84,8 +85,12 @@ export function Footer() {
         </p>
         <span>[XX]</span>
       </div>
-      <div className={ui["wordmark"]} aria-label="Demo">
-        <span>D</span>EMO
+      <div className={ui["wordmark"]} role="img" aria-label="Demo">
+        {"DEMO".split("").map((letter) => (
+          <span key={letter} className={styles.letter} aria-hidden="true">
+            {letter}
+          </span>
+        ))}
       </div>
     </footer>
   );

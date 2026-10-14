@@ -1,0 +1,186 @@
+.frame {
+  --corner-color: var(--primary);
+  --corner-size: 8px;
+  --corner-offset: 5px;
+  --corner-stroke: 1px;
+}
+
+.frame::before,
+.frame::after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--corner-offset));
+  bottom: calc(-1 * var(--corner-offset));
+  width: var(--corner-size);
+  pointer-events: none;
+  background:
+    linear-gradient(var(--corner-color), var(--corner-color)) var(--corner-side) top / 100% var(--corner-stroke) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) var(--corner-side) bottom / 100% var(--corner-stroke) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) var(--corner-side) top / var(--corner-stroke) var(--corner-size) no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) var(--corner-side) bottom / var(--corner-stroke) var(--corner-size) no-repeat;
+}
+
+.frame::before {
+  --corner-side: left;
+  left: calc(-1 * var(--corner-offset));
+}
+
+.frame::after {
+  --corner-side: right;
+  right: calc(-1 * var(--corner-offset));
+}
+
+.navigation {
+  --corner-offset: 4px;
+  --corner-size: 7px;
+  transform: translateX(calc(-5 * var(--u)));
+}
+
+.eyebrow {
+  --corner-offset: 1px;
+  --corner-size: 6.5px;
+  --corner-stroke: 1px;
+  background: #010101;
+}
+
+.outlineAction {
+  --corner-offset:6px;
+  --corner-size: 8px;
+}
+
+.solidAction {
+  margin-inline: calc(8 * var(--u));
+  padding-block: calc(0.5 * var(--u));
+}
+
+.solidAction > button {
+  height: calc(59 * var(--u));
+  font-weight: 400;
+}
+
+.solidAction::before,
+.solidAction::after {
+  top: -8px;
+  bottom: -7px;
+  width: 16px;
+  background:
+    linear-gradient(var(--corner-color), var(--corner-color)) left 9px / 15px 1px no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) left calc(100% - 8px) / 15px 1px no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) 7px top / 1px 18px no-repeat,
+    linear-gradient(var(--corner-color), var(--corner-color)) 7px bottom / 1px 18px no-repeat;
+    overflow: hidden;
+}
+
+.solidAction::before {
+  left: -7px;
+}
+
+.solidAction::after {
+  right: -8px;
+}
+
+@media (width < 1024px) {
+  .solidAction > button {
+    height: 47px;
+  }
+}
+
+.partnerLabel {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.partnerLabel::before,
+.partnerLabel::after,
+.partnerStrip::after {
+  --top-stem-offset: 0px;
+  --top-stem-height: 17px;
+  content: "";
+  position: absolute;
+  top: -8px;
+  bottom: -4px;
+  width: 16px;
+  pointer-events: none;
+  background:
+    linear-gradient(#8e4240, #8e4240) center 6px / 14px 4px no-repeat,
+    linear-gradient(#8e4240, #8e4240) center bottom / 14px 4px no-repeat,
+    linear-gradient(#8e4240, #8e4240) center var(--top-stem-offset) / 4px var(--top-stem-height) no-repeat,
+    linear-gradient(#8e4240, #8e4240) center bottom / 4px 10px no-repeat;
+}
+
+.partnerLabel::before {
+  /* Top-left +; bottom-left inverted T. */
+  left: -8px;
+}
+
+.partnerLabel::after {
+  /* Top-right T starts at the crossbar; bottom-right inverted T. */
+  --top-stem-offset: 6px;
+  --top-stem-height: 10px;
+  right: -8px;
+}
+
+.partnerStrip::after {
+  /* Far-right edge: + above, the same inverted T as both label corners below. */
+  right: -8px;
+}
+
+.detailLabel {
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--u));
+}
+
+.detailIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  flex: 0 0 16px;
+}
+
+.detailValue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.groupStart {
+  border-bottom: 0;
+}
+
+.letter {
+  --letter-glow: var(--primary);
+  display: block;
+  color: #1d0900;
+  transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+.letter:first-child {
+  color: var(--letter-glow);
+}
+
+@media (hover: hover) {
+  .letter:hover {
+    color: var(--letter-glow);
+    text-shadow:
+      0 0 0.035em var(--letter-glow),
+      0 0 0.09em color-mix(in srgb, var(--letter-glow) 65%, transparent),
+      0 0 0.2em color-mix(in srgb, var(--letter-glow) 35%, transparent);
+  }
+}
+
+@media (width < 640px) {
+  .partnerLabel::before,
+  .partnerLabel::after,
+  .partnerStrip::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter {
+    transition: none;
+  }
+}

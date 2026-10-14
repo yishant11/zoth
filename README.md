@@ -79,11 +79,13 @@ The verification script starts and stops its own production server on port 3001.
 
 ## Design notes
 
-The perspective grid is confined to the hero section and scrolls away with it. The connection card has an orange radial glow around and below it; later page sections use the black page background. Styling is implemented with Tailwind CSS 4 utilities in `src/lib/ui-styles.ts`, with theme tokens and animation keyframes in `src/app/globals.css`.
+The perspective grid is confined to the hero section and scrolls away with it. `hero-backdrop.tsx` draws a responsive SVG grid with a shared vanishing point so the ceiling and wall lines meet. Its CSS mask fades the lines around the content and toward the bottom. The connection card has an orange radial glow around and below it; later page sections use the black page background. Styling is implemented with Tailwind CSS 4 utilities in `src/lib/ui-styles.ts`, with theme tokens and animation keyframes in `src/app/globals.css`.
+
+The reference corner brackets, button cross marks, partner-label cross marks, table alignment and individual footer-letter glow are scoped in `src/components/sections/section-details.module.css`. Hovering a footer letter lights only that letter in the brand orange; leaving it restores its original color. The glow transition respects reduced motion.
 
 Built from the supplied Screen 01 screenshot and CSS export (1698px desktop reference). It preserves the black background, orange `#FF4509`, dark perspective grid, fine borders, bracket details, two-column layout, partner strip and oversized footer wordmark. Mobile reflows the layout rather than shrinking the desktop frame.
 
-The source uses the reference's placeholder copy, with meaningful connection/resource labels and numeric mock sale data. Arial/Helvetica are explicit font fallbacks and the grid is recreated in CSS. The partner strip uses the supplied SVG logos. No full-screen screenshot is used as the implementation.
+The source uses the reference's placeholder copy, with meaningful accessible connection/resource labels and numeric mock sale data. Arial/Helvetica are explicit font fallbacks and the grid is drawn as SVG. The partner strip uses the supplied SVG logos. No full-screen screenshot is used as the implementation.
 
 ## Verification
 
